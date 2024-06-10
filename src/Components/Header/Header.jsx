@@ -27,6 +27,59 @@ function Header() {
 
 const [mobileMenu, setMobileMenu]= useState({left:false})
 
+const toogleDrawer = (anchor,open)=>(event)=>{
+  if(event.type === "keydown" && (event.type ===  "Tab" || event.type ==="shift")){
+    return;
+  }
+setMobileMenu({...mobileMenu,[anchor]:open})
+
+}
+
+const list = (anchor)=>(
+  <Box 
+   sx={{
+    width:anchor === "top" || anchor ==="buttom" ? "auto" : 250
+    }}
+    role="presentation"
+    onClick={toogleDrawer(anchor,false)}
+    onKeyDown = {toogleDrawer(anchor,false)}
+   >
+  <List>
+    {
+
+      nav_titles.map((item,index)=>(
+        <ListItem key={item.index} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+              {
+                index === 0 && <HomeIcon/>
+              }
+              {
+                index === 1 && <FeaturedPlayListIcon/>
+              }
+              {
+                index === 2 && <MiscellaneousServicesIcon/>
+              }
+              {
+                index === 3 && <ContactsIcon/>
+              }
+          
+              </ListItemIcon>
+              <ListItemText primary={item.display} />
+            </ListItemButton>
+          </ListItem>
+
+      ))
+    }
+          
+      </List>
+
+
+  </Box>
+
+)
+
+
   const nav_titles = [
     {
       path: "/",
@@ -104,7 +157,18 @@ const [mobileMenu, setMobileMenu]= useState({left:false})
         }}
       >
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <CustomMenuIcon />
+          <CustomMenuIcon onClick={toogleDrawer("left",true)}/>
+<Drawer
+  anchor="left"
+  open={mobileMenu["left"]}
+  onClose={toogleDrawer("left", false)}
+>
+{list("left")}
+
+
+</Drawer>
+
+
           <NavBarLogo src={logoImg} />
         </Box>
         <NavBarLinksBox>
