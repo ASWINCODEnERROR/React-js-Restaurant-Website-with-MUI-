@@ -36,7 +36,7 @@ const Welcome = () => {
               variant="body2"
               sx={{
                 fontSize: "18px",
-                color: "#687690",
+                color: "#000",
                 fontWeight: "500",
                 mt: 10,
                 mb: 4,

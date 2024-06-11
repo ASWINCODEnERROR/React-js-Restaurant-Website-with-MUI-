@@ -17,6 +17,7 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 // import { useState } from "react";
 
 
@@ -35,6 +36,10 @@ setMobileMenu({...mobileMenu,[anchor]:open})
 
 }
 
+
+const navigate = useNavigate();
+
+
 const list = (anchor)=>(
   <Box 
    sx={{
@@ -48,7 +53,7 @@ const list = (anchor)=>(
     {
 
       nav_titles.map((item,index)=>(
-        <ListItem key={item.index} disablePadding>
+        <ListItem key={item.index} disablePadding onClick={()=>navigate(item.path)}>
             <ListItemButton>
               <ListItemIcon>
               {
@@ -86,15 +91,15 @@ const list = (anchor)=>(
       display: "Home",
     },
     {
-      path: "/",
+      path: "/dishes",
       display: "Dishes",
     },
     {
-      path: "/",
+      path: "/services",
       display: "Services",
     },
     {
-      path: "/",
+      path: "/about",
       display: "About Us",
     },
   ];
@@ -173,7 +178,8 @@ const list = (anchor)=>(
         </Box>
         <NavBarLinksBox>
           {nav_titles.map((item, index) => (
-            <NavBarLink variant="body2">{item.display}</NavBarLink>
+            <NavBarLink variant="body2" onClick={() =>navigate(item.path)}> 
+              {item.display}</NavBarLink>
           ))}
         </NavBarLinksBox>
       </Box>
