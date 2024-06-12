@@ -44,7 +44,7 @@ const Welcome = () => {
             >
               Welcome to ABC Restorent
             </Typography>
-            <Title variant="h1">Discover a place where you'll Love to Eat.</Title>
+            <Title variant="h1">Discover a place where you'll Love to Eat!!.</Title>
             <Typography
               variant="body2"
               sx={{ fontSize: "18px", color: "#5A6473", my: 4 }}
