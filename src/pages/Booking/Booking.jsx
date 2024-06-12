@@ -127,7 +127,7 @@ const Booking = () => {
                             my: 1,
                         }}
                     >
-                        Booking Guides
+                        Booking Guidess
                     </Typography>
                     <Box
                         sx={{
