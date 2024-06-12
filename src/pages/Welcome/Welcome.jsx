@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import { Container } from "@mui/system";
 import React from "react";
@@ -42,9 +42,9 @@ const Welcome = () => {
                 mb: 4,
               }}
             >
-              Welcome to ABC Restorent
+              Welcome to ABC Restaurant
             </Typography>
-            <Title variant="h1">Discover a place where you'll Love to Eat!!.</Title>
+            <Title variant="h1">Discover a place where you'll Love to Eat!!!!!!!!!1</Title>
             <Typography
               variant="body2"
               sx={{ fontSize: "18px", color: "#5A6473", my: 4 }}
